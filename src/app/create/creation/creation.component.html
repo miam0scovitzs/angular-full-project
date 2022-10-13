@@ -1,0 +1,28 @@
+<h1>user has been created</h1>
+
+<table class="table">
+    <thead class="thead-dark">
+      <tr style="color:rgb(40, 36, 36)">
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Address</th>
+        <th scope="col">update</th>
+        <th scope="col">delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let i of allUsers ;index as j">
+         <td>{{j}}</td>
+        <td>{{i.name}}</td>
+        <td>{{i.Email}}</td>
+        <td>{{i.address}}</td>
+        <td><button type="submit" class="btn btn-success " (click)="onChange()">update</button>
+        </td>
+        <td><button class="btn btn-danger " (click)="onClick(i._id)">delete</button></td>
+    
+      </tr>
+  
+     
+  </table>
+

@@ -1,0 +1,54 @@
+<h1>welcome to admin</h1>
+<!-- <h2>{{userData}}</h2> -->
+
+<div class="container">
+    <form class="px-md-2">
+
+        <div class="form-outline mb-4">
+            <label class="form-label" for="form3Example1q">Name</label>
+            <input type="text" id="form3Example1q" class="form-control" name="name" [(ngModel)]="userData.name" />
+
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 mb-4">
+
+                <div class="form-outline datepicker">
+                    <label for="exampleDatepicker1" class="form-label">address</label>
+                    <input type="text" class="form-control" id="exampleDatepicker1" name="address"
+                        [(ngModel)]="userData.address" />
+
+                </div>
+
+            </div>
+            <div class="col-md-6 mb-4">
+                <label for="exampleDatepicker1" class="form-label">type</label>
+                <select class="select" name="type" [(ngModel)]="userData.type" >
+
+                    <option value="1">user</option>
+                    <option value="2">admin</option>
+
+                </select>
+
+            </div>
+        </div>
+
+
+
+        <div class="mb-4">
+            <label class="form-label" for="registerEmail">Email</label>
+            <input type="email" id="registerEmail" class="form-control" name="Email" [(ngModel)]="userData.Email" />
+        </div>
+
+        <!-- Password input -->
+        <div class="mb-4">
+            <label class="form-label" for="registerPassword">Password</label>
+            <input type="password" id="registerPassword" class="form-control" name="password" [(ngModel)]="userData.password" />
+        </div>
+
+
+
+        <button type="submit" class="btn btn-success btn-lg mb-1"  (click)="onClick()">Submit</button>
+
+    </form>
+</div>
