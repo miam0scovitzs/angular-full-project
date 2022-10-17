@@ -1,4 +1,11 @@
-<h1>user has been created</h1>
+<!-- <h1>user has been created</h1> -->
+
+
+                               <section class="vh-100" style="background-color: #eee;">
+                                <div class="card text-black" style="border-radius: 15px;">  
+                                         
+
+
 
 <table class="table">
     <thead class="thead-dark">
@@ -17,7 +24,7 @@
         <td>{{i.name}}</td>
         <td>{{i.Email}}</td>
         <td>{{i.address}}</td>
-        <td><button type="submit" class="btn btn-success " (click)="onChange()">update</button>
+        <td><button type="submit" class="btn btn-success " (click)="onChange(i)">update</button>
         </td>
         <td><button class="btn btn-danger " (click)="onClick(i._id)">delete</button></td>
     
@@ -26,3 +33,4 @@
      
   </table>
 
+                          

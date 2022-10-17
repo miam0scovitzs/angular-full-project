@@ -1,54 +1,93 @@
-<h1>welcome to admin</h1>
+<!-- <h1>welcome to admin</h1> -->
 <!-- <h2>{{userData}}</h2> -->
 
-<div class="container">
-    <form class="px-md-2">
+<section class="vh-100" style="background-color: #eee;">
+    <div class="container h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-lg-12 col-xl-11">
+                <div class="card text-black" style="border-radius: 25px;">
+                    <div class="card-body p-md-5">
+                        <div class="row justify-content-center">
+                            <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
 
-        <div class="form-outline mb-4">
-            <label class="form-label" for="form3Example1q">Name</label>
-            <input type="text" id="form3Example1q" class="form-control" name="name" [(ngModel)]="userData.name" />
+                                <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign up
+                                </p>
+                                <p> welcome to admin page</p>
 
-        </div>
 
-        <div class="row">
-            <div class="col-md-6 mb-4">
+                                <!-- <div class="flex-container"> -->
+                                <div class="menu">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <form class="px-md-2">
 
-                <div class="form-outline datepicker">
-                    <label for="exampleDatepicker1" class="form-label">address</label>
-                    <input type="text" class="form-control" id="exampleDatepicker1" name="address"
-                        [(ngModel)]="userData.address" />
+                                                <div class="form-outline mb-4">
+                                                    <label class="form-label" for="form3Example1q">Name</label>
+                                                    <input type="text" id="form3Example1q" class="form-control"
+                                                        name="name" [(ngModel)]="userData.name" />
 
+                                                </div>
+
+                                                <div class="row">
+                                                    <div>
+
+                                                        <div class="form-outline datepicker">
+                                                            <label for="exampleDatepicker1"
+                                                                class="form-label">address</label>
+                                                            <input type="text" class="form-control"
+                                                                id="exampleDatepicker1" name="address"
+                                                                [(ngModel)]="userData.address" />
+
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="col-md-6 mb-8">
+                                                        <label for="exampleDatepicker1" class="form-label">type</label>
+                                                        <select class="select" name="type" [(ngModel)]="userData.type"
+                                                            style="border-radius: 30px;">
+
+                                                            <option value="1">user</option>
+                                                            <option value="2">admin</option>
+
+                                                        </select>
+
+                                                    </div>
+                                                </div>
+
+
+
+                                                <div class="mb-4">
+                                                    <label class="form-label" for="registerEmail">Email</label>
+                                                    <input type="email" id="registerEmail" class="form-control"
+                                                        name="Email" [(ngModel)]="userData.Email" />
+                                                </div>
+
+
+                                                <div class="mb-4">
+                                                    <label class="form-label" for="registerPassword">Password</label>
+                                                    <input type="password" id="registerPassword" class="form-control"
+                                                        name="password" [(ngModel)]="userData.password" />
+                                                </div>
+
+                                                <button type="submit" class="btn btn-success btn-lg mb-1"
+                                                    (click)="onClick()">sign up</button>
+
+                                            </form>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="image">
+
+                                                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
+                                                    class="img-fluid" alt="Sample image">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-
-            </div>
-            <div class="col-md-6 mb-4">
-                <label for="exampleDatepicker1" class="form-label">type</label>
-                <select class="select" name="type" [(ngModel)]="userData.type" >
-
-                    <option value="1">user</option>
-                    <option value="2">admin</option>
-
-                </select>
-
             </div>
         </div>
-
-
-
-        <div class="mb-4">
-            <label class="form-label" for="registerEmail">Email</label>
-            <input type="email" id="registerEmail" class="form-control" name="Email" [(ngModel)]="userData.Email" />
-        </div>
-
-        <!-- Password input -->
-        <div class="mb-4">
-            <label class="form-label" for="registerPassword">Password</label>
-            <input type="password" id="registerPassword" class="form-control" name="password" [(ngModel)]="userData.password" />
-        </div>
-
-
-
-        <button type="submit" class="btn btn-success btn-lg mb-1"  (click)="onClick()">Submit</button>
-
-    </form>
-</div>
+    </div>
+</section>

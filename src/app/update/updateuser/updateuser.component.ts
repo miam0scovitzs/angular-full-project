@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserDataService } from 'src/app/user-data.service';
 
@@ -9,16 +9,34 @@ import { UserDataService } from 'src/app/user-data.service';
 })
 
 export class UpdateuserComponent implements OnInit {
-  update:any= {}
+  
+ // user:any={}
+  //obj:any={}
+  // @Output() event= new EventEmitter<string>()
   constructor(private userDataService:UserDataService,private routes:Router) { }
-
-  ngOnInit(): void {
+  allUser:any={}
+  userForUpdate:any
+  ngOnInit(){
+    this.userForUpdate=this.userDataService.userToBeUpdated
+    console.log(this.userForUpdate)
+ 
   }
+  
+
+  
    onSave(){
-    this.userDataService.updateUser(this.update).subscribe((data:any)=>{
+    this.userDataService.updateUser(this.userForUpdate).subscribe((data:any)=>{
+      this.onDone()
       alert(data.msg)
     }, ((err)=>{
       alert(err.message)
     }))
+   }
+   onDone(){
+    this.userDataService.getUser().subscribe((data:any)=>{
+     // console.log(data)
+      this.allUser = data
+      this.routes.navigate(['/creation'])
+    })
    }
 }

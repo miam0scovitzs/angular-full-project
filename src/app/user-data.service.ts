@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable ,EventEmitter, Output} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 
@@ -8,7 +8,8 @@ import { HttpClient } from '@angular/common/http';
 export class UserDataService {
   mainData:any={}
   createData: any;
-  get:any
+  userToBeUpdated:any
+ //@Output() event = new EventEmitter<any>()
  
   
 
@@ -22,6 +23,7 @@ export class UserDataService {
   }
 
   createUser(obj:any){
+    console.log(obj)
     return this.http.post(this.apiUrl + '/createUser', obj);
   }
   getUser(){
@@ -35,4 +37,5 @@ export class UserDataService {
   updateUser(obj:any){
     return this.http.put(this.apiUrl +'/update' ,obj  );
   }
+  
 }

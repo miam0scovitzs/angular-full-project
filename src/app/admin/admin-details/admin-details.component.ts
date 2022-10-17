@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { UserDataService } from 'src/app/user-data.service';
@@ -20,10 +20,11 @@ export class AdminDetailsComponent {
 
   }
   onClick() {
-    console.log(this.userData);
     this.userDataService.createUser(this.userData).subscribe((data: any) => {
       this.userDataService.createData = data
+      console.log(data)
       this.routes.navigate(['/creation'])
+      
 
 
     })
