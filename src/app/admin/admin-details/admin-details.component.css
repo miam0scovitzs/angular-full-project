@@ -3,19 +3,4 @@
         flex-direction: row;
     } */
 
-    .image{
-        height:100%;
-        width: 450px;
-        position:relative;
-        left:100%;
-        right:10%
-    }
-    .menu{
-        position:relative;
-        left: -50%;
-         right:-40%;
-        height:35% 
-    }
-    p{
-        text-align: center;
-    }
+   

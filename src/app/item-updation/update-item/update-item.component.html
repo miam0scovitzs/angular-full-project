@@ -1,0 +1,20 @@
+<div class="container">
+    <form class="px-md-2">
+        <div>
+            <label for="exampleInputEmail1" class="form-label">name</label>
+            <input type="text" class="form-control" id="text1" name="name"
+                [(ngModel)]="updateItem.name" >
+        </div>
+        <div>
+            <label for="exampleInputPassword1" class="form-label">type</label>
+            <input type="text" class="form-control" id="text" name="type"
+                [(ngModel)]="updateItem.type" >
+        </div>
+        <div>
+            <label for="exampleInputPassword1" class="form-label">price</label>
+            <input type="text" class="form-control" id="price" name="price"
+                [(ngModel)]="updateItem.price" >
+        </div>
+        <button type="submit" class="btn btn-primary" (click)="update()">update</button>
+    </form>
+</div>

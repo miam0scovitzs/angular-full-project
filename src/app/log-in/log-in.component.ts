@@ -19,7 +19,7 @@ export class LogInComponent  {
   onClick(){
     this.userDataService.getUserData(this.email,this.password).subscribe((data:any)=>{
        this.userDataService.mainData = data.data
-      if(data.data == "2") this.routes.navigate(['/admin'])
+      if(data.data == "2") this.routes.navigate(['/creation'])
       else this.routes.navigate(['/user'])
       
   })

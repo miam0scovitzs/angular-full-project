@@ -1,0 +1,87 @@
+
+<div style="align-items: center">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#" [routerLink]="['/login']">log in</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#" [routerLink]="['/creation']">back to navbar</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#" [routerLink]="['/admin']">back to admin</a>
+            </li>
+
+           
+          </ul>
+          <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+    <h3 style="text-align: center">all Items(do any crud operation)</h3>
+
+
+<div class="container" style="background-color:rgb(241, 251, 251)">
+  <div class="row">
+    <div class="col-md-5">
+      <form class="px-md-2">
+
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">name</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="name"
+            [(ngModel)]="createItem.name">
+
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">type</label>
+          <input type="text" class="form-control" id="exampleInputPassword1" name="type" [(ngModel)]="createItem.type">
+        </div>
+
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">price</label>
+          <input type="text" class="form-control" id="exampleInputPassword1" name="price"
+            [(ngModel)]="createItem.price">
+        </div>
+
+        <button type="submit" class="btn btn-primary" (click)="onClick()">create</button>
+      </form>
+    </div>
+    <div class="col-md-7">
+      <table class="table">
+        <thead class="thead-dark">
+          <tr style="color:rgb(40, 36, 36)">
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Type</th>
+            <th scope="col">Price</th>
+            <th scope="col">update</th>
+            <th scope="col">delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let i of allItems ;index as j">
+            <td>{{j}}</td>
+            <td>{{i.name}}</td>
+            <td>{{i.type}}</td>
+            <td>{{i.price}}</td>
+            <td><button type="submit" class="btn btn-success " (click)="onUpdate(i)">update</button>
+            </td>
+            <td><button class="btn btn-danger" (click)="onDelete(i._id)">delete</button></td>
+
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>

@@ -11,7 +11,8 @@ export class UserDataService {
   userToBeUpdated:any
  //@Output() event = new EventEmitter<any>()
  
-  
+  createForItem:any;
+  itemToBeUpdate:any;
 
   apiUrl =  "http://localhost:3000";
 
@@ -34,8 +35,26 @@ export class UserDataService {
   return this.http.delete(this.apiUrl +'/delete'+"/"+ id)
   }
 
-  updateUser(obj:any){
-    return this.http.put(this.apiUrl +'/update' ,obj  );
+  updateUser(id:any){
+    return this.http.put(this.apiUrl +'/update' ,id  );
   }
   
+
+  createItems(obj: any){
+    return this.http.post(this.apiUrl +"/createItem",obj)
+  }
+
+  getItems(){
+    return this.http.get(this.apiUrl+"/getItem")
+  }
+
+  
+  deleteItem(data:any){
+   // let emp = this.apiUrl +'/delete'
+  return this.http.delete(this.apiUrl +'/deleteItems'+"/"+ data)
+  }
+
+  updateItems(body:any){
+    return this.http.put(this.apiUrl +'/updateItems',body );
+  }
 }

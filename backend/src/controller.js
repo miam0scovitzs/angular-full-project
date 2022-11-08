@@ -1,4 +1,5 @@
 const userModel = require("./model")
+const createModel = require("./itemModel")
 const jwt = require("jsonwebtoken")
 const nodemailer = require("nodemailer")
 var smtpTransport = require('nodemailer-smtp-transport');
@@ -140,8 +141,60 @@ const updateUser=async(req,res)=>{
 
 
 
+
+
+//..............................for item creation api............................................
+
+
+const createItem = async(req,res)=>{
+  try{let data = req.body
+    console.log(data)
+  const createData = await createModel.create(data)
+  res.status(201).send(createData)
+}
+catch(err){res.status(500).send(err.message)}
+}
+
+
+const getItems= async(req,res)=>{
+ try{ let allData=await createModel.find()
+  return res.status(200).send(allData)
+}
+catch(err){res.status(500).send(err.msg)}
+
+}
+
+const deleteItems= async(req,res)=>{
+  
+  try{let itemId = req.params.id
+  //let {id}= data
+ 
+  let getData = await createModel.findByIdAndDelete({_id:itemId})
+  res.status(200).send({msg:`item has been deleted with the id of ${itemId}`})
+  }
+  catch(err){ res.status(500).send(err.msg)}
+}
+
+
+const updateItems=async(req,res)=>{
+ try{ let data = req.body
+  console.log(data)
+  
+  let updateData = await createModel.findOneAndUpdate({_id:data._id},{$set:req.body},{new:true})
+
+  return res.status(201).send({success: true,msg:"data has been updated",updateData})
+ }
+ catch(err) {return res.status(500).send({msg:err.msg})}
+}
+
+
 module.exports.userCreation = userCreation
 module.exports.userLogin = userLogin
 module.exports.getUser= getUser
 module.exports.deleteUser= deleteUser
 module.exports.updateUser= updateUser
+
+module.exports.createItem= createItem
+module.exports.getItems= getItems
+module.exports.deleteItems= deleteItems
+module.exports.updateItems= updateItems

@@ -14,18 +14,11 @@ export class CreationComponent implements OnInit {
   allUsers:any
   deleteData:any
   updateData:any={}
-  // block=this.user.type==1
- // @Output() event = new EventEmitter<string>()
+  
   constructor(private userDataService:UserDataService, private router:Router) { }
   
   async ngOnInit() {
-    // this.user=this.userDataService.createData.msg
-    // console.log(this.user)
-    // this.userDataService.getUser().subscribe((data:any)=>{
-    //   console.log(data)
-    //   this.allUsers = data
-    //   console.log(this.allUsers)
-    // })
+   
     this.onCome();
   }
   
@@ -45,8 +38,7 @@ export class CreationComponent implements OnInit {
   
 
   onChange(obj:any){
-  //  obj=  this.addNewItem(val)
-  console.log(obj)
+  
     this.userDataService.userToBeUpdated=obj
        this.router.navigate(['/update'])
 

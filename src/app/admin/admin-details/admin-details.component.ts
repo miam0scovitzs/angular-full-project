@@ -17,17 +17,37 @@ export class AdminDetailsComponent {
 
   ngOnInit(): void {
    
-
+    this.onCome();
   }
-  onClick() {
+  onClickCreate() {
     this.userDataService.createUser(this.userData).subscribe((data: any) => {
       this.userDataService.createData = data
       console.log(data)
-      this.routes.navigate(['/creation'])
+      alert("successfull")
+      // this.routes.navigate(['/creation'])
       
-
-
     })
   }
+
+  onClick(id:String){
+    this.userDataService.deleteUser(id).subscribe((data:any)=>{
+    console.log(data)
+    this.onCome()
+    alert(data.msg)
+    })
+  } 
+  onCome(){this.userDataService.getUser().subscribe((data:any)=>{
+    console.log(data)
+    this.allUsers = data
+  })
+ }
+  
+
+  onChange(obj:any){
+  
+    this.userDataService.userToBeUpdated=obj
+       this.routes.navigate(['/update'])
+
+    }
 
 }

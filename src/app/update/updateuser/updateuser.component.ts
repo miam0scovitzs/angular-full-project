@@ -31,12 +31,13 @@ export class UpdateuserComponent implements OnInit {
     }, ((err)=>{
       alert(err.message)
     }))
+    
    }
    onDone(){
     this.userDataService.getUser().subscribe((data:any)=>{
      // console.log(data)
       this.allUser = data
-      this.routes.navigate(['/creation'])
+      this.routes.navigate(['/admin'])
     })
    }
 }

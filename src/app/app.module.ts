@@ -10,12 +10,16 @@ import { AdminModule } from './admin/admin.module';
 import { UserModule } from './user/user.module';
 import { CreateModule } from './create/create.module';
 import { UpdateModule } from './update/update.module';
+import { ItemDetailsModule } from './item-details/item-details.module';
+import { ItemUpdationModule } from './item-updation/item-updation.module';
+//import { ItemsComponent } from './item-details/items/items.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LogInComponent
+    
   ],
   imports: [
     BrowserModule,
@@ -25,8 +29,9 @@ import { UpdateModule } from './update/update.module';
     AdminModule,
     UserModule,
     CreateModule,
-    UpdateModule
-
+    UpdateModule,
+    ItemDetailsModule,
+    ItemUpdationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -7,9 +7,7 @@ const routes: Routes = [
   {path:'login', component:LogInComponent},
   {path:"admin",loadChildren:()=>import('../app/admin/admin.module').then((mod)=>mod.AdminModule)},
   
-  {path:"user",loadChildren:()=>import("../app/user/user.module").then((mod)=>mod.UserModule)},
-  {path:"creation",loadChildren:()=>import("../app/create/create.module").then((m)=>m.CreateModule)},
-  {path:"update",loadChildren:()=>import("../app/update/update.module").then((m)=>m.UpdateModule)}
+  {path:"user",loadChildren:()=>import("../app/user/user.module").then((mod)=>mod.UserModule)}
 ];
 
 @NgModule({
