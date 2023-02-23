@@ -45,7 +45,5 @@ onCome(){this.userDataService.getItems().subscribe((data:any)=>{
  onUpdate(obj:any){
   this.userDataService.itemToBeUpdate=obj
   this.router.navigate(['/updateItem'])
-  
  }
-
 }

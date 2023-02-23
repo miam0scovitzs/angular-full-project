@@ -12,13 +12,15 @@ import { CreateModule } from './create/create.module';
 import { UpdateModule } from './update/update.module';
 import { ItemDetailsModule } from './item-details/item-details.module';
 import { ItemUpdationModule } from './item-updation/item-updation.module';
+import { AuthGuard } from 'src/app/shared/auth.guard';
 //import { ItemsComponent } from './item-details/items/items.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    LogInComponent
+    LogInComponent,
+    
     
   ],
   imports: [
@@ -31,9 +33,12 @@ import { ItemUpdationModule } from './item-updation/item-updation.module';
     CreateModule,
     UpdateModule,
     ItemDetailsModule,
-    ItemUpdationModule
+    ItemUpdationModule,
+ 
   ],
+ 
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

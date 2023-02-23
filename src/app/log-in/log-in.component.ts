@@ -17,12 +17,13 @@ export class LogInComponent  {
   constructor(private userDataService:UserDataService,private routes:Router){}
     
   onClick(){
-    this.userDataService.getUserData(this.email,this.password).subscribe((data:any)=>{
-       this.userDataService.mainData = data.data
-      if(data.data == "2") this.routes.navigate(['/creation'])
-      else this.routes.navigate(['/user'])
+    this.userDataService.getUserData(this.email,this.password)
+  //   .subscribe((data:any)=>{
+  //      this.userDataService.mainData = data.data
+  //     if(data.data == "2") this.routes.navigate(['/creation'])
+  //     else this.routes.navigate(['/user'])
       
-  })
+  // })
      
   }
   

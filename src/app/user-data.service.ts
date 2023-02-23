@@ -1,5 +1,6 @@
 import { Injectable ,EventEmitter, Output} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 
 @Injectable({
@@ -16,11 +17,19 @@ export class UserDataService {
 
   apiUrl =  "http://localhost:3000";
 
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient,private routes:Router) { }
 
   getUserData(email:String,password:String){
     let body = {email,password}
-    return this.http.post(this.apiUrl+ '/logIn', body);
+    return this.http.post(this.apiUrl+ '/logIn', body).subscribe((res)=>{
+       console.log(res)
+      this.mainData=res
+
+          
+      //   else this.routes.navigate(['/user'])
+        localStorage.setItem("token1",this.mainData.data)
+        this.routes.navigate(['/creation'])
+    })
   }
 
   createUser(obj:any){
